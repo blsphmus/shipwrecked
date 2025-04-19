@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
         Bullet bulletScript = bullet.GetComponent<Bullet>();
         if (bulletScript != null)
         {
-            bulletScript.SetDirection(direction, true); // true = РїСѓР»СЏ РѕС‚ РёРіСЂРѕРєР°
+            bulletScript.SetDirection(direction, true); // true = пуля от игрока
         }
     }
 }
