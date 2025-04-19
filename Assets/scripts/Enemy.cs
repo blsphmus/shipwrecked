@@ -77,10 +77,10 @@ public class Enemy : MonoBehaviour
     {
         // Создаем пулю в позиции врага
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-        
+
         // Вычисляем направление к игроку
         Vector2 direction = (player.transform.position - transform.position).normalized;
-        
+
         // Устанавливаем направление пули, указываем, что пуля от врага
         Bullet bulletScript = bullet.GetComponent<Bullet>();
         if (bulletScript != null)
@@ -110,6 +110,7 @@ public class Enemy : MonoBehaviour
             healthBar.fillAmount = (float)currentHealth / maxHealth;
         }
     }
+
 
     void OnTriggerEnter2D(Collider2D collision)
     {

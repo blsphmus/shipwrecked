@@ -54,7 +54,7 @@ public class EnemySpawner : MonoBehaviour
             float x = railX[railIndex];
 
             // Позиция спавна: X — позиция рельса, Y — верх экрана
-            Vector3 spawnPosition = new Vector3(x, topY, 0);
+            Vector3 spawnPosition = new Vector3(x, topY-1f, 0);
 
             // Определяем, какой враг будет заспавнен
             GameObject enemyPrefabToSpawn;
