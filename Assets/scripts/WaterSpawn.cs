@@ -6,16 +6,15 @@ public class WaveSpawner : MonoBehaviour
 {
     [Header("Wave Settings")]
     public List<GameObject> wavePrefabs;
-    public float spawnInterval = 0f;
-    public float waveSpeed = 3f;
+    public float spawnInterval = 1f;
 
-    [Header("Shake Settings")]
+    [Header("Movement Settings")]
+    public float waveSpeed = 3f;
     public float shakeAmount = 0.01f;
     public float shakeFrequency = 10f;
 
     private float topY;
-    private float bottomY; // Нижняя граница экрана
-    private float fixedX = 0f;
+    private float bottomY;
 
     void Start()
     {
@@ -42,46 +41,11 @@ public class WaveSpawner : MonoBehaviour
     void SpawnSingleWave()
     {
         GameObject wavePrefab = wavePrefabs[Random.Range(0, wavePrefabs.Count)];
-        Vector3 spawnPosition = new Vector3(fixedX, topY + 1f, 0);
+        Vector3 spawnPosition = new Vector3(0, topY + 1f, 0);
         GameObject newWave = Instantiate(wavePrefab, spawnPosition, Quaternion.identity);
 
-        WaveMover mover = newWave.AddComponent<WaveMover>();
-        mover.speed = waveSpeed;
-        mover.shakeAmount = shakeAmount;
-        mover.shakeFrequency = shakeFrequency;
-        mover.bottomY = bottomY; // Передаем нижнюю границу
-    }
-}
-
-public class WaveMover : MonoBehaviour
-{
-    public float speed;
-    public float shakeAmount;
-    public float shakeFrequency;
-    public float bottomY; // Нижняя граница экрана
-
-    private Vector3 basePosition;
-
-    void Start()
-    {
-        basePosition = transform.position;
-    }
-
-    void Update()
-    {
-        // Основное движение вниз
-        basePosition += Vector3.down * speed * Time.deltaTime;
-
-        // Очень легкая тряска
-        float shakeOffset = Mathf.Sin(Time.time * shakeFrequency) * shakeAmount;
-
-        // Комбинируем движение и тряску
-        transform.position = basePosition + new Vector3(shakeOffset, 0, 0);
-
-        // Уничтожаем волну, если она вышла за нижнюю границу экрана
-        if (transform.position.y < bottomY - 1f) // -1f для небольшого запаса
-        {
-            Destroy(gameObject);
-        }
+        // Настраиваем параметры движения
+        WaveShaking waveShaking = newWave.AddComponent<WaveShaking>();
+        waveShaking.Initialize(waveSpeed, shakeAmount, shakeFrequency, bottomY);
     }
 }
