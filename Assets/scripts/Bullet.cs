@@ -39,10 +39,12 @@ public class Bullet : MonoBehaviour
         // Если пуля от врага и столкнулась с игроком
         else if (!isFromPlayer && collision.CompareTag("Player"))
         {
+            Player player = collision.GetComponent<Player>();
+            if (player != null)
+            {
+                player.TakeDamage(10); // Наносим урон игроку (например, 10 единиц)
+            }
             Destroy(gameObject); // Уничтожаем пулю
-            // Здесь можно добавить логику урона игроку, если нужно
         }
     }
 }
-
-//example
