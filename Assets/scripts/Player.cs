@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab; // Bullet prefab to instantiate
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public float shootInterval = 1f; // Time between shots in seconds
 
     void Start()
@@ -43,6 +44,22 @@ public class Player : MonoBehaviour
     void Start()
     {
 >>>>>>> Stashed changes
+=======
+    public Image healthBar; // Reference to the UI health bar
+    public GameObject gameOverMenu; // Reference to the game over menu UI
+    //public Button shootButton; // Кнопка для стрельбы
+    //public float shootInterval = 1f; // Time between shots in seconds
+    public int maxHealth = 100; // Maximum player health
+    public float shootCooldown = 0.5f; // Задержка между выстрелами
+    
+    private ScoreManager scoreManager; // Reference to ScoreManager
+    private Rigidbody2D rb;
+    private int currentHealth; // Current player health
+    private float lastShootTime;
+
+    void Start()
+    {
+>>>>>>> Stashed changes
         rb = GetComponent<Rigidbody2D>();
         // Initialize health
         currentHealth = maxHealth;
@@ -54,6 +71,9 @@ public class Player : MonoBehaviour
 
         //StartCoroutine(ShootRoutine()); // Start the shooting coroutine
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -111,6 +131,20 @@ public class Player : MonoBehaviour
 <<<<<<< Updated upstream
 }
 =======
+
+    public void Shoot()
+    {
+        if (Time.time > lastShootTime + shootCooldown)
+        {
+            lastShootTime = Time.time;
+            GameObject nearestEnemy = FindNearestRectangularEnemy();
+            if (nearestEnemy != null)
+            {
+                ShootAtEnemy(nearestEnemy);
+                //Debug.Log("Выстрел по врагу");
+            }
+        }
+    }
 
     public void Shoot()
     {

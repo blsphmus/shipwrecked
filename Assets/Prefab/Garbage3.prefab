@@ -13,7 +13,11 @@ GameObject:
   - component: {fileID: 2126142862364291144}
   - component: {fileID: -961282241673211274}
   m_Layer: 5
+<<<<<<<< Updated upstream:Assets/Prefab/Garbage3.prefab
   m_Name: Garbage3
+========
+  m_Name: Garbage1
+>>>>>>>> Stashed changes:Assets/Prefab/Garbage1.prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -24,6 +24,9 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer spriteRenderer; // Ссылка на SpriteRenderer
     private float bottomY; // Нижняя граница экрана
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -44,6 +47,9 @@ public class Enemy : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>(); // Находим SpriteRenderer
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

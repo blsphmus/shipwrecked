@@ -14,10 +14,18 @@ GameObject:
   - component: {fileID: -961282241673211274}
   m_Layer: 5
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Name: Garbage1
 =======
 <<<<<<<< Updated upstream:Assets/Prefab/Garbage2.prefab
   m_Name: Garbage2
+========
+  m_Name: Garbage1
+>>>>>>>> Stashed changes:Assets/Prefab/Garbage1.prefab
+>>>>>>> Stashed changes
+=======
+<<<<<<<< Updated upstream:Assets/Prefab/Garbage3.prefab
+  m_Name: Garbage3
 ========
   m_Name: Garbage1
 >>>>>>>> Stashed changes:Assets/Prefab/Garbage1.prefab
@@ -88,6 +96,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
   m_FlipX: 0
@@ -96,11 +105,17 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
 =======
   m_Sprite: {fileID: 21300000, guid: a173f8b684090d548af55316122342e3, type: 3}
+=======
+  m_Sprite: {fileID: 21300000, guid: ca1f15ba58e9854448b2ac3dc62e20d0, type: 3}
+>>>>>>> Stashed changes
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
   m_Size: {x: 2, y: 2}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -123,8 +138,11 @@ MonoBehaviour:
   destroyEffect: {fileID: 1189848407229091931, guid: 4e962890e3ed4e541a973b1d37c9fd26, type: 3}
   speed: 2
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream:Assets/Prefab/Garbage.prefab
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   isRectangular: 0
@@ -134,7 +152,10 @@ MonoBehaviour:
   pointsOnDestroy: 0
   healthBar: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes:Assets/Prefab/Garbage1.prefab
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 --- !u!58 &-961282241673211274
@@ -167,7 +188,11 @@ CircleCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_IsTrigger: 1
+=======
+  m_IsTrigger: 0
+>>>>>>> Stashed changes
 =======
   m_IsTrigger: 0
 >>>>>>> Stashed changes
