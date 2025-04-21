@@ -14,11 +14,15 @@ GameObject:
   - component: {fileID: -961282241673211274}
   m_Layer: 5
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<<< Updated upstream:Assets/Prefab/Garbage2.prefab
   m_Name: Garbage2
 ========
   m_Name: Garbage1
 >>>>>>>> Stashed changes:Assets/Prefab/Garbage1.prefab
+=======
+  m_Name: Garbage2
+>>>>>>> Stashed changes
 =======
   m_Name: Garbage2
 >>>>>>> Stashed changes
