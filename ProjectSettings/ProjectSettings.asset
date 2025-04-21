@@ -17,7 +17,11 @@ PlayerSettings:
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
+=======
+  m_SplashScreenBackgroundColor: {r: 0.007843138, g: 0.007843138, b: 0.007843138, a: 1}
+>>>>>>> Stashed changes
 =======
   m_SplashScreenBackgroundColor: {r: 0.007843138, g: 0.007843138, b: 0.007843138, a: 1}
 >>>>>>> Stashed changes
@@ -334,6 +338,7 @@ PlayerSettings:
       m_Kind: 2
       m_SubKind: 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     - m_Textures: []
       m_Width: 192
       m_Height: 192
@@ -395,6 +400,8 @@ PlayerSettings:
       m_Kind: 0
       m_SubKind: 
 =======
+=======
+>>>>>>> Stashed changes
   - m_BuildTarget: iPhone
     m_Icons:
     - m_Textures: []
@@ -492,6 +499,9 @@ PlayerSettings:
       m_Height: 1024
       m_Kind: 4
       m_SubKind: App Store
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_BuildTargetBatching: []
   m_BuildTargetShaderSettings: []

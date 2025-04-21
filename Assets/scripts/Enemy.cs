@@ -23,6 +23,9 @@ public class Enemy : MonoBehaviour
     private ScoreManager scoreManager; // Ссылка на ScoreManager
     private SpriteRenderer spriteRenderer; // Ссылка на SpriteRenderer
     private float bottomY; // Нижняя граница экрана
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
     void Start()
@@ -40,6 +43,9 @@ public class Enemy : MonoBehaviour
         scoreManager = FindObjectOfType<ScoreManager>(); // Находим ScoreManager
         spriteRenderer = GetComponent<SpriteRenderer>(); // Находим SpriteRenderer
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         // Находим игрока по тегу
         if (isRectangular)

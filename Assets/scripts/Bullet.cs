@@ -51,8 +51,17 @@ public class Bullet : MonoBehaviour
         else if (!isFromPlayer && collision.CompareTag("Player")) // Если пуля от врага и столкнулась с игроком
         {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             Destroy(gameObject); // Уничтожаем пулю
             // Здесь можно добавить логику урона игроку, если нужно
+=======
+            Player player = collision.GetComponent<Player>();
+            if (player != null) player.TakeDamage(10); // Наносим урон игроку (например, 10 единиц)
+            Destroy(gameObject); // Уничтожаем пулю
+            Vector2 hitPosition = GetCollisionPosition(collision); // Получаем позицию эффекта
+            GameObject effect = Instantiate(hitEffectPrefab, hitPosition, Quaternion.identity);
+            Destroy(effect, 1f);
+>>>>>>> Stashed changes
 =======
             Player player = collision.GetComponent<Player>();
             if (player != null) player.TakeDamage(10); // Наносим урон игроку (например, 10 единиц)

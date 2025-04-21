@@ -61,8 +61,14 @@ public class EnemySpawner : MonoBehaviour
             Vector3 spawnPosition = new Vector3(railX[railIndex], topY - 1f, 0);
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             // Позиция спавна: X — позиция рельса, Y — верх экрана
             Vector3 spawnPosition = new Vector3(x, topY, 0);
+=======
+            // Определяем тип объекта для спавна
+            bool isTrash = Random.value < trashSpawnChance;
+            GameObject[] targetArray = isTrash ? trashPrefabs : shipEnemyPrefabs;
+>>>>>>> Stashed changes
 =======
             // Определяем тип объекта для спавна
             bool isTrash = Random.value < trashSpawnChance;

@@ -503,7 +503,10 @@ CanvasRenderer:
   m_GameObject: {fileID: 221414412}
   m_CullTransparentMesh: 1
 <<<<<<< Updated upstream:Assets/Scenes/Start_Menu.unity
+<<<<<<< Updated upstream:Assets/Scenes/Start_Menu.unity
 =======
+=======
+>>>>>>> Stashed changes:Assets/Scenes/MENU.unity
 --- !u!1 &303492082
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +591,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream:Assets/Scenes/Start_Menu.unity
+>>>>>>> Stashed changes:Assets/Scenes/MENU.unity
+=======
 >>>>>>> Stashed changes:Assets/Scenes/MENU.unity
 --- !u!1 &519420028
 GameObject:
@@ -682,7 +688,10 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream:Assets/Scenes/Start_Menu.unity
+<<<<<<< Updated upstream:Assets/Scenes/Start_Menu.unity
 =======
+=======
+>>>>>>> Stashed changes:Assets/Scenes/MENU.unity
 --- !u!1 &555276735
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,6 +776,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream:Assets/Scenes/Start_Menu.unity
+>>>>>>> Stashed changes:Assets/Scenes/MENU.unity
+=======
 >>>>>>> Stashed changes:Assets/Scenes/MENU.unity
 --- !u!1 &653342155
 GameObject:
@@ -1119,7 +1131,10 @@ CanvasRenderer:
   m_GameObject: {fileID: 719126683}
   m_CullTransparentMesh: 1
 <<<<<<< Updated upstream:Assets/Scenes/Start_Menu.unity
+<<<<<<< Updated upstream:Assets/Scenes/Start_Menu.unity
 =======
+=======
+>>>>>>> Stashed changes:Assets/Scenes/MENU.unity
 --- !u!1 &774138040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,6 +1387,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream:Assets/Scenes/Start_Menu.unity
+>>>>>>> Stashed changes:Assets/Scenes/MENU.unity
+=======
 >>>>>>> Stashed changes:Assets/Scenes/MENU.unity
 --- !u!1 &1029911259
 GameObject:
@@ -1858,6 +1876,7 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream:Assets/Scenes/Start_Menu.unity
+<<<<<<< Updated upstream:Assets/Scenes/Start_Menu.unity
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 735}
@@ -1960,6 +1979,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207091514}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> Stashed changes:Assets/Scenes/MENU.unity
 =======
 >>>>>>> Stashed changes:Assets/Scenes/MENU.unity
 --- !u!1 &1213851588
@@ -3714,7 +3735,10 @@ CanvasRenderer:
   m_GameObject: {fileID: 1973167808}
   m_CullTransparentMesh: 1
 <<<<<<< Updated upstream:Assets/Scenes/Start_Menu.unity
+<<<<<<< Updated upstream:Assets/Scenes/Start_Menu.unity
 =======
+=======
+>>>>>>> Stashed changes:Assets/Scenes/MENU.unity
 --- !u!1 &2079539618
 GameObject:
   m_ObjectHideFlags: 0
@@ -3799,6 +3823,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream:Assets/Scenes/Start_Menu.unity
+>>>>>>> Stashed changes:Assets/Scenes/MENU.unity
+=======
 >>>>>>> Stashed changes:Assets/Scenes/MENU.unity
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -3819,4 +3846,7 @@ SceneRoots:
   - {fileID: 1643815147}
   - {fileID: 555276737}
   - {fileID: 1209051638}
+<<<<<<< Updated upstream:Assets/Scenes/Start_Menu.unity
+>>>>>>> Stashed changes:Assets/Scenes/MENU.unity
+=======
 >>>>>>> Stashed changes:Assets/Scenes/MENU.unity

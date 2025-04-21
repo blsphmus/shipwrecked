@@ -710,6 +710,9 @@ CanvasRenderer:
   m_GameObject: {fileID: 251595668}
   m_CullTransparentMesh: 1
 --- !u!1 &282596907
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
@@ -5665,7 +5668,10 @@ MonoBehaviour:
   minScale: 0.5
   maxScale: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
   minSpeed: 1
   maxSpeed: 2
   speedIncreaseRate: 0.05
@@ -5814,12 +5820,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493788638}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -9719.999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
 =======
+=======
+>>>>>>> Stashed changes
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
@@ -5828,6 +5837,9 @@ RectTransform:
   - {fileID: 598553513}
   - {fileID: 1790737413}
   - {fileID: 1838818959}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_Father: {fileID: 560395569}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5947,8 +5959,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 7139760990450577053, guid: f3a9b8b36f45d7d41bd7a6fc44a942ca, type: 3}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   shootInterval: 1
 =======
+=======
+>>>>>>> Stashed changes
   healthBar: {fileID: 1790737414}
   gameOverMenu: {fileID: 65472770}
   maxHealth: 500
@@ -6317,7 +6332,11 @@ RectTransform:
   m_Children:
   - {fileID: 367216822}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - {fileID: 311639944}
+=======
+  - {fileID: 1377795768}
+>>>>>>> Stashed changes
   - {fileID: 493788639}
 =======
   - {fileID: 1377795768}
@@ -6328,6 +6347,9 @@ RectTransform:
   - {fileID: 988502911}
   - {fileID: 1678209751}
   - {fileID: 65472771}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6337,7 +6359,10 @@ RectTransform:
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!1001 &598553512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7817,7 +7842,10 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1626408480
 GameObject:
   m_ObjectHideFlags: 0
@@ -8897,6 +8925,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 188706294}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -8913,4 +8944,7 @@ SceneRoots:
   - {fileID: 188706294}
   - {fileID: 441497865}
   - {fileID: 282596910}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
