@@ -4,20 +4,21 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
+    public GameObject bulletPrefab; // Префаб пули (только для прямоугольных врагов)
+    public GameObject destroyEffect;
     public float speed = 2f; // Скорость врага
     public bool isRectangular = false; // Флаг для прямоугольных врагов
-    public GameObject bulletPrefab; // Префаб пули (только для прямоугольных врагов)
     public float shootInterval = 2f; // Интервал стрельбы в секундах
     public int maxHealth = 3; // Максимальное здоровье врага
     public int collisionDamage = 20; // Урон при столкновении с игроком
     public int pointsOnDestroy = 100; // Очки за уничтожение врага
-    public Sprite[] rectangularSprites; // Массив спрайтов для прямоугольных врагов
     private int currentHealth; // Текущее здоровье врага
     public Image healthBar; // Ссылка на UI-полоску здоровья (только для прямоугольных врагов)
-    private float bottomY; // Нижняя граница экрана
+
     private GameObject player; // Ссылка на игрока
     private ScoreManager scoreManager; // Ссылка на ScoreManager
     private SpriteRenderer spriteRenderer; // Ссылка на SpriteRenderer
+    private float bottomY; // Нижняя граница экрана
 
     void Start()
     {
@@ -28,18 +29,9 @@ public class Enemy : MonoBehaviour
         // Инициализируем здоровье
         currentHealth = maxHealth;
         UpdateHealthBar();
-
-        // Находим ScoreManager
-        scoreManager = FindObjectOfType<ScoreManager>();
-
-        // Находим SpriteRenderer
-        spriteRenderer = GetComponent<SpriteRenderer>();
-
-        // Для прямоугольных врагов выбираем случайный спрайт
-        if (isRectangular && spriteRenderer != null && rectangularSprites.Length > 0)
-        {
-            spriteRenderer.sprite = rectangularSprites[Random.Range(0, rectangularSprites.Length)];
-        }
+        
+        scoreManager = FindObjectOfType<ScoreManager>(); // Находим ScoreManager
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Находим SpriteRenderer
 
         // Находим игрока по тегу
         if (isRectangular)
@@ -100,6 +92,8 @@ public class Enemy : MonoBehaviour
                 scoreManager.AddPoints(pointsOnDestroy); // Начисляем очки за уничтожение
             }
             Destroy(gameObject);
+            GameObject effect = Instantiate(destroyEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 1f);
         }
     }
 
@@ -127,6 +121,8 @@ public class Enemy : MonoBehaviour
                 scoreManager.AddPoints(pointsOnDestroy); // Начисляем очки за уничтожение
             }
             Destroy(gameObject); // Уничтожаем врага при столкновении
+            GameObject effect = Instantiate(destroyEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 1f);
         }
     }
 }

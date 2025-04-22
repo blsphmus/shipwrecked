@@ -1,4 +1,4 @@
 public interface ICollidable
 {
-    void HandleCollision( Player player );
+    void HandleCollision(Player player);
 }

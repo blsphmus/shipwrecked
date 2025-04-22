@@ -4,9 +4,19 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public Text scoreText; // Reference to the UI Text for displaying score
+    public Text highScoreText; // Текст для рекорда
     public float pointsPerSecond = 10f; // Points awarded per second of survival
+
     private float totalScore = 0f; // Total score
+    private int highScore = 0;
     private bool isScoring = true; // Flag to control scoring
+    private bool isNewHighScore = false; // Флаг нового рекорда
+
+    void Start()
+    {
+        highScore = PlayerPrefs.GetInt("HighScore", 0); // Загружаем рекорд
+        UpdateHighScoreDisplay();
+    }
 
     void Update()
     {
@@ -31,6 +41,14 @@ public class ScoreManager : MonoBehaviour
     public void StopScoring()
     {
         isScoring = false;
+        // Сохраняем рекорд при завершении игры
+        if (totalScore > highScore)
+        {
+            highScore = Mathf.FloorToInt(totalScore);
+            PlayerPrefs.SetInt("HighScore", highScore);
+            PlayerPrefs.Save();
+            isNewHighScore = true; // Устанавливаем флаг
+        }
     }
 
     public int GetFinalScore()
@@ -42,7 +60,32 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = "РћС‡РєРё: " + Mathf.FloorToInt(totalScore).ToString();
+            scoreText.text = Mathf.FloorToInt(totalScore).ToString();
         }
+    }
+
+    void UpdateHighScoreDisplay()
+    {
+        if (highScore == 0)
+        {
+            highScoreText.text = "Рекорд: " + totalScore.ToString();
+        }
+        if (highScoreText != null)
+        {
+            highScoreText.text = "Рекорд: " + highScore.ToString();
+        }
+    }
+
+    public bool IsNewHighScore() // Возвращает, был ли установлен новый рекорд
+    {
+        return isNewHighScore;
+    }
+
+    // Сброс рекорда !! Для тестирования добавьте кнопку с этим методом / вызовите его где-нибудь
+    public void ResetHighScore()
+    {
+        PlayerPrefs.DeleteKey("HighScore");
+        highScore = 0;
+        UpdateHighScoreDisplay();
     }
 }
