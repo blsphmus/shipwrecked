@@ -6,6 +6,9 @@ TagManager:
   tags:
   - garbage
   - Ship
+  - ScoreText
+  - HighScoreText
+  - ScoreManagerTag
   layers:
   - Default
   - TransparentFX

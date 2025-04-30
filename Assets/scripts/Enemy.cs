@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public GameObject bulletPrefab; // Префаб пули (только для прямоугольных врагов)
     public GameObject destroyEffect;
+    public GameObject coinEffect;
     public float speed = 2f; // Скорость врага
     public bool isRectangular = false; // Флаг для прямоугольных врагов
     public float shootInterval = 2f; // Интервал стрельбы в секундах
@@ -13,7 +14,9 @@ public class Enemy : MonoBehaviour
     public int collisionDamage = 20; // Урон при столкновении с игроком
     public int pointsOnDestroy = 100; // Очки за уничтожение врага
     private int currentHealth; // Текущее здоровье врага
-    public Image healthBar; // Ссылка на UI-полоску здоровья (только для прямоугольных врагов)
+    public Image healthBar; 
+    public int CoinSpawnCount = 1;
+    [Range(0, 1)] public float CoinSpawnChance = 0.15f;
 
     private GameObject player; // Ссылка на игрока
     private ScoreManager scoreManager; // Ссылка на ScoreManager
@@ -25,6 +28,10 @@ public class Enemy : MonoBehaviour
         // Получаем главную камеру и вычисляем нижнюю границу
         Camera camera = Camera.main;
         bottomY = camera.transform.position.y - camera.orthographicSize;
+
+        GameData.Load(); // Загружаем сохраненные данные
+        CoinSpawnCount = GameData.CoinSpawnCount;
+        CoinSpawnChance = GameData.CoinSpawnChance;
 
         // Инициализируем здоровье
         currentHealth = maxHealth;
@@ -91,6 +98,7 @@ public class Enemy : MonoBehaviour
             {
                 scoreManager.AddPoints(pointsOnDestroy); // Начисляем очки за уничтожение
             }
+            TryDropCoins();
             Destroy(gameObject);
             GameObject effect = Instantiate(destroyEffect, transform.position, Quaternion.identity);
             Destroy(effect, 1f);
@@ -102,6 +110,21 @@ public class Enemy : MonoBehaviour
         if (healthBar != null)
         {
             healthBar.fillAmount = (float)currentHealth / maxHealth;
+        }
+    }
+
+    private void TryDropCoins()
+    {
+        if (Random.value <= CoinSpawnChance) {
+            if (CoinManager.Instance != null)
+            {
+                CoinManager.Instance.AddCoins(CoinSpawnCount);
+                if (coinEffect != null)
+                {
+                    GameObject effect = Instantiate(coinEffect, transform.position, Quaternion.identity);
+                    Destroy(effect, 1f);
+                }
+            }
         }
     }
 

@@ -30,6 +30,11 @@ public class GameOverMenu : MonoBehaviour
 
     public void RestartGame()
     {
+        if (ScoreManager.Instance != null)
+        {
+            ScoreManager.Instance.ResetScore();
+        }
+
         Time.timeScale = 1f; // Resume game
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reload current scene
     }
@@ -44,6 +49,11 @@ public class GameOverMenu : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        if (ScoreManager.Instance != null)
+        {
+            ScoreManager.Instance.ResetScore();
+        }
+
         Time.timeScale = 1f; // Resume time for main menu
         SceneManager.LoadScene("MENU"); // Load main menu scene
     }

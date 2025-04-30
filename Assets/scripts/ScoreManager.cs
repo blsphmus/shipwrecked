@@ -1,10 +1,13 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public Text scoreText; // Reference to the UI Text for displaying score
-    public Text highScoreText; // Текст для рекорда
+    public static ScoreManager Instance;
+    public TMP_Text scoreText; // Reference to the UI Text for displaying score
+    public TMP_Text highScoreText; // Текст для рекорда
     public float pointsPerSecond = 10f; // Points awarded per second of survival
 
     private float totalScore = 0f; // Total score
@@ -15,6 +18,37 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         highScore = PlayerPrefs.GetInt("HighScore", 0); // Загружаем рекорд
+        UpdateHighScoreDisplay();
+    }
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            LoadHighScore();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Обновляем ссылки на UI элементы при загрузке сцены
+        totalScore = 0f;
+        scoreText = GameObject.FindGameObjectWithTag("ScoreText")?.GetComponent<TMP_Text>();
+        highScoreText = GameObject.FindGameObjectWithTag("HighScoreText")?.GetComponent<TMP_Text>();
+
+        UpdateAllDisplays();
+    }
+
+    void LoadHighScore()
+    {
+        highScore = PlayerPrefs.GetInt("HighScore", 0);
         UpdateHighScoreDisplay();
     }
 
@@ -32,8 +66,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (isScoring)
         {
-            // Add points for enemy destruction or other events
-            totalScore += points;
+            totalScore += points; // Add points for enemy destruction or other events
             UpdateScoreDisplay();
         }
     }
@@ -41,14 +74,20 @@ public class ScoreManager : MonoBehaviour
     public void StopScoring()
     {
         isScoring = false;
-        // Сохраняем рекорд при завершении игры
         if (totalScore > highScore)
         {
             highScore = Mathf.FloorToInt(totalScore);
             PlayerPrefs.SetInt("HighScore", highScore);
             PlayerPrefs.Save();
-            isNewHighScore = true; // Устанавливаем флаг
+            isNewHighScore = true;
         }
+        UpdateAllDisplays();
+    }
+
+    void UpdateAllDisplays()
+    {
+        UpdateScoreDisplay();
+        UpdateHighScoreDisplay();
     }
 
     public int GetFinalScore()
@@ -66,10 +105,6 @@ public class ScoreManager : MonoBehaviour
 
     void UpdateHighScoreDisplay()
     {
-        if (highScore == 0)
-        {
-            highScoreText.text = "Рекорд: " + totalScore.ToString();
-        }
         if (highScoreText != null)
         {
             highScoreText.text = "Рекорд: " + highScore.ToString();
@@ -87,5 +122,13 @@ public class ScoreManager : MonoBehaviour
         PlayerPrefs.DeleteKey("HighScore");
         highScore = 0;
         UpdateHighScoreDisplay();
+    }
+
+    public void ResetScore()
+    {
+        totalScore = 0f;
+        isScoring = true;
+        isNewHighScore = false;
+        UpdateAllDisplays();
     }
 }

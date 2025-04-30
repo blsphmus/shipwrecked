@@ -107,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 7139760990450577053, guid: d4c3e40b6efec414886f0c3372dbb71f, type: 3}
   destroyEffect: {fileID: 1524611515458948051, guid: f9cfab21379928e429c815d5ce994c8b, type: 3}
+  coinEffect: {fileID: 8257699323301135016, guid: 4e85109a76664f345b2cc0c0c33a01c0, type: 3}
   speed: 2
   isRectangular: 1
   shootInterval: 2
@@ -114,6 +115,8 @@ MonoBehaviour:
   collisionDamage: 1000
   pointsOnDestroy: 200
   healthBar: {fileID: 3265295738552678900, guid: 1ba96a20cf3e2fb4ab35fa95b5dc9671, type: 3}
+  CoinSpawnCount: 1
+  CoinSpawnChance: 0.1
 --- !u!61 &2851366327651685694
 BoxCollider2D:
   m_ObjectHideFlags: 0

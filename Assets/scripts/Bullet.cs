@@ -42,7 +42,7 @@ public class Bullet : MonoBehaviour
         if (isFromPlayer && collision.CompareTag("Ship")) // Если пуля от игрока и столкнулась с врагом
         {
             Enemy enemy = collision.GetComponent<Enemy>();
-            if (enemy != null) enemy.TakeDamage(1); // Наносим урон врагу
+            if (enemy != null) enemy.TakeDamage(GameData.PlayerBulletDamage); // Наносим урон врагу, подгружаем из гд
             Destroy(gameObject); // Уничтожаем пулю
             Vector2 hitPosition = GetCollisionPosition(collision); // Получаем позицию эффекта
             GameObject effect = Instantiate(hitEffectPrefab, hitPosition, Quaternion.identity);

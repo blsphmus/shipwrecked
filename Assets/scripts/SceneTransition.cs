@@ -12,6 +12,7 @@ public class SceneLoader : MonoBehaviour
 
     IEnumerator LoadAsync(int sceneIndex)
     {
+        GameData.Save(); // Сохраняем текущее состояние
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneIndex);
         while (!asyncLoad.isDone)
         {

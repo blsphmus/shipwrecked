@@ -1,36 +1,56 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.PlayerLoop;
 
 public class Player : MonoBehaviour
 {
-    public GameObject bulletPrefab; // Bullet prefab to instantiate
-    public Image healthBar; // Reference to the UI health bar
+    public GameObject bulletPrefab; 
+    public Image healthBar; 
+    public Image energyBar; 
     public GameObject gameOverMenu; // Reference to the game over menu UI
     //public Button shootButton; // Кнопка для стрельбы
     //public float shootInterval = 1f; // Time between shots in seconds
-    public int maxHealth = 100; // Maximum player health
-    public float shootCooldown = 0.5f; // Задержка между выстрелами
-    
+    public int maxHealth = 100;
+    public int maxEnergy = 5;
+    //public float shootCooldown = 0.5f; // Задержка между выстрелами
+    public float energyRecoveryInterval = 10f;
+
     private ScoreManager scoreManager; // Reference to ScoreManager
     private Rigidbody2D rb;
-    private int currentHealth; // Current player health
+    private int currentHealth;
+    private int currentEnergy;
     private float lastShootTime;
+    private float lastEnergyRecoveryTime;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        // Initialize health
+        
+        GameData.Load(); // Загружаем сохраненные данные
+        maxHealth = GameData.PlayerMaxHealth;
         currentHealth = maxHealth;
+        maxEnergy = GameData.PlayerMaxEnergy;
+        currentEnergy = maxEnergy;
+
         UpdateHealthBar();
 
-        
         scoreManager = FindObjectOfType<ScoreManager>(); // Find ScoreManager
-
 
         //StartCoroutine(ShootRoutine()); // Start the shooting coroutine
     }
 
+    void Update()
+    {
+        if (Time.time > lastEnergyRecoveryTime + energyRecoveryInterval)
+        {
+            currentEnergy++;
+            UpdateEnergyBar();
+            lastEnergyRecoveryTime = Time.time;
+        }
+    }
+
+    // Это для автоматической стрельбы
     //IEnumerator ShootRoutine()
     //{
     //    while (true)
@@ -83,9 +103,11 @@ public class Player : MonoBehaviour
 
     public void Shoot()
     {
-        if (Time.time > lastShootTime + shootCooldown)
+        if ( currentEnergy >= 1 ) // Time.time > lastShootTime + shootCooldown &&
         {
             lastShootTime = Time.time;
+            currentEnergy -= 1;
+            UpdateEnergyBar();
             GameObject nearestEnemy = FindNearestRectangularEnemy();
             if (nearestEnemy != null)
             {
@@ -110,6 +132,14 @@ public class Player : MonoBehaviour
         if (healthBar != null)
         {
             healthBar.fillAmount = (float)currentHealth / maxHealth;
+        }
+    }
+
+    void UpdateEnergyBar()
+    {
+        if (energyBar != null)
+        {
+            energyBar.fillAmount = (float)currentEnergy / maxEnergy;
         }
     }
 
